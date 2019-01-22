@@ -97,7 +97,6 @@
 .form-control {
   height: 46px;
   min-height: 46px;
-  max-height: 46px;
   border-radius: 4px;
   padding: 10px 16px;
   border: 1px solid #dedede;
@@ -219,6 +218,8 @@
 
 .textarea-abs textarea {
   position: absolute;
+
+  max-height: 46px;
 }
 
 .textarea-abs textarea:focus {
