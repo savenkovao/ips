@@ -232,7 +232,11 @@
   position: absolute;
   top: 45.5px;
 }
-
+hr {
+  border: none;
+  border-bottom: 1px solid #d7d7d7;
+  margin: 40px 0;
+}
 .textarea-length {
   display: inline-block;
   font-family: 'AktivGrotesk';
