@@ -88,6 +88,12 @@
   display: block
 }
 
+.btn-block {
+  height: 46px;
+  margin-bottom: 33px;
+
+}
+
 .form-control {
   height: 46px;
   min-height: 46px;

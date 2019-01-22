@@ -1,11 +1,13 @@
 $(function () {
   autosize(document.getElementById('note'));
+  autosize(document.getElementById('note1'));
 
   var eventInited = false;
   _initInputLabels();
   _events();
 
-  $('#textarea-length').text($('#note').val().length +'/200')
+  $('#textarea-length').text($('#note').val().length + '/200');
+  $('#textarea-length1').text($('#note1').val().length + '/200');
 
   function _events() {
     if(eventInited) return;
@@ -16,9 +18,9 @@ $(function () {
 
     $(document).on('click', '.show-password', e => {
       $(e.currentTarget).toggleClass('show');
-      let $input =$(e.currentTarget).closest('.form-label').find('input');
+      let $input = $(e.currentTarget).closest('.form-label').find('input');
 
-      if( $input.attr('type') === 'text' ){
+      if($input.attr('type') === 'text') {
         $input.attr('type', 'password');
       } else {
         $input.attr('type', 'text');
@@ -27,8 +29,8 @@ $(function () {
       $(e.currentTarget).toggleClass('visible');
     });
 
-    $('#note').on('keypress', function(e){
-      $('#textarea-length').text($(e.target).val().length +'/200')
+    $('#note, #note1').on('keypress', function (e) {
+      $(e.target).find('.textarea-length').text($(e.target).val().length + '/200');
     });
   }
 
