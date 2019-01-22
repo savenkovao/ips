@@ -1,6 +1,7 @@
 $(function () {
   autosize(document.getElementById('note'));
   autosize(document.getElementById('note1'));
+  autosize(document.getElementById('note2'));
 
   var eventInited = false;
   _initInputLabels();
@@ -8,6 +9,7 @@ $(function () {
 
   $('#textarea-length').text($('#note').val().length + '/200');
   $('#textarea-length1').text($('#note1').val().length + '/200');
+  $('#textarea-length2').text($('#note2').val().length + '/200');
 
   function _events() {
     if(eventInited) return;
@@ -29,8 +31,8 @@ $(function () {
       $(e.currentTarget).toggleClass('visible');
     });
 
-    $('#note, #note1').on('keypress', function (e) {
-      $(e.target).find('.textarea-length').text($(e.target).val().length + '/200');
+    $('#note, #note1, #note2').on('keypress change', function (e) {
+      $(e.target).closest('.form-label').find('.textarea-length').text($(e.target).val().length + '/200');
     });
   }
 
